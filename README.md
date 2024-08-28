@@ -8,13 +8,18 @@ It creates and compares virtual DOM snapshots to find out which
 parts of the rendered UI need to be updated.
 
 -> How Eeact updates the Website UI
-Step 1 - React creates the Component Tree starting from parent component (App component) to child (header, main) and grand child(counter, button, etc..)
-Step 2 - React derives the actual html code that should be rendered from that component tree and it then creates a Virtual Snapshot of the Target HTML Code from the component tree  - still not reaching out to the real DOM instead it just creates a virtual representation that how real DOM should look like.
+Step 1 - React creates the Component Tree starting from parent component (App component)
+ to child (header, main) and grand child(counter, button, etc..)
+Step 2 - React derives the actual html code that should be rendered from that component
+tree and it then creates a Virtual Snapshot of the Target HTML Code from the component
+tree  - still not reaching out to the real DOM instead it just creates a virtual representation that how real DOM should look like.
 Step 3 - Compare New Virtual DOM Snapshot to Previous (old) Virtual DOM Snapshot.
 Step 4- Identify and apply changes to the "Real DOM"
-Therefor if the app is started there is no last (old) snapshot therefor react see everything change then make all changes to real DOM. it means the entire the virtual DOM inserted into Real DOM with id="root"
+Therefor if the app is started there is no last (old) snapshot therefor react see everything change
+then make all changes to real DOM. it means the entire the virtual DOM inserted into Real DOM with id="root"
 
-and react repeats these steps everytime when something changes and compare old virtual DOM and new virtual DOM and apply only those changes to real DOM.
+and react repeats these steps everytime when something changes and
+compare old virtual DOM and new virtual DOM and apply only those changes to real DOM.
 
 ```
 
