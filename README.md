@@ -73,3 +73,58 @@ useMemo() accept first parameter an anonymous function( that normal
 
 N.B dont overuse useMemo() to perform extra check which costs performance
 ```
+
+```
+The position of this component in the component tree.
+React tracks state by component type & position (of that component) in the tree.
+```
+
+```
+key value on component could be used to re-render the component when value passed to that key is changed i.e state value passed to child component so when state will update then child component re execute due to change in key value
+<Counter key={chosenCount} initialCount={chosenCount} />
+```
+
+```
+useEffect() Hook is also could be used to update the state value of child component while change is dependenacy value of hook which will cause the re-render of component due the new state value
+but this task could be achieved by simply passing key value to child component in parent where pass the state value of parent to key for which we want to re-render the child.
+```
+
+## State Scheduling and Batching
+
+```
+React do not update the state immediately instead it schedule the update to next time means update will available on next render.
+console.log(chosenCount); // won't work!
+
+React also batch all state update in single function and effect only once in next render instead of multiple renders for each update of state within the same function.
+setChosenCount(newCount);
+setChosenCount((prevState) => prevState + 1);
+
+function App() {
+  const [chosenCount, setChosenCount] = useState(0);
+
+  const handleSetCount = (newCount) => {
+    setChosenCount(newCount);
+    setChosenCount((prevState) => prevState + 1);
+    console.log(chosenCount); // won't work!
+  };
+
+}
+```
+
+## Million JS
+
+### https://million.dev/docs
+
+```
+Million Lint is a VSCode extension that speeds up your website!
+
+Your React app is slow. Million Lint surfaces problematic code and automatically suggests ways to improve it.
+
+Million Lint works with any React app (Next.js, Vite, Webpack, etc.) – get started in minutes!
+
+Automatic Installation
+```
+
+```
+npx million@latest
+```
