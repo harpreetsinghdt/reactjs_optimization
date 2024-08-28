@@ -12,11 +12,13 @@ Step 1 - React creates the Component Tree starting from parent component (App co
  to child (header, main) and grand child(counter, button, etc..)
 Step 2 - React derives the actual html code that should be rendered from that component
 tree and it then creates a Virtual Snapshot of the Target HTML Code from the component
-tree  - still not reaching out to the real DOM instead it just creates a virtual representation that how real DOM should look like.
+tree  - still not reaching out to the real DOM instead
+it just creates a virtual representation that how real DOM should look like.
 Step 3 - Compare New Virtual DOM Snapshot to Previous (old) Virtual DOM Snapshot.
 Step 4- Identify and apply changes to the "Real DOM"
 Therefor if the app is started there is no last (old) snapshot therefor react see everything change
-then make all changes to real DOM. it means the entire the virtual DOM inserted into Real DOM with id="root"
+then make all changes to real DOM.
+it means the entire the virtual DOM inserted into Real DOM with id="root"
 
 and react repeats these steps everytime when something changes and
 compare old virtual DOM and new virtual DOM and apply only those changes to real DOM.
@@ -85,22 +87,31 @@ React tracks state by component type & position (of that component) in the tree.
 ```
 
 ```
-key value on component could be used to re-render the component when value passed to that key is changed i.e state value passed to child component so when state will update then child component re execute due to change in key value
+key value on component could be used to re-render the component when value passed to
+that key is changed i.e state value passed to child component so when state will update
+then child component re execute due to change in key value
+
 <Counter key={chosenCount} initialCount={chosenCount} />
 ```
 
 ```
-useEffect() Hook is also could be used to update the state value of child component while change is dependenacy value of hook which will cause the re-render of component due the new state value
-but this task could be achieved by simply passing key value to child component in parent where pass the state value of parent to key for which we want to re-render the child.
+useEffect() Hook is also could be used to update the state value of child component
+while change is dependenacy value of hook which will cause the re-render of component
+due the new state value
+but this task could be achieved by simply passing key value to child component in parent
+where pass the state value of parent to key for which we want to re-render the child.
 ```
 
 ## State Scheduling and Batching
 
 ```
-React do not update the state immediately instead it schedule the update to next time means update will available on next render.
+React do not update the state immediately instead it schedule the update to next time
+means update will available on next render.
 console.log(chosenCount); // won't work!
 
-React also batch all state update in single function and effect only once in next render instead of multiple renders for each update of state within the same function.
+React also batch all state update in single function and effect only once in next render
+instead of multiple renders for each update of state within the same function.
+
 setChosenCount(newCount);
 setChosenCount((prevState) => prevState + 1);
 
