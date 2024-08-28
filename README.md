@@ -42,9 +42,16 @@ I hope you understand what i mean
 ## useMemo() Hook
 
 ```
-useMemo() is beneficial to prevent the execution of normal function in component unnecessary.
-memo() is wrapped around component functions but useMemo() is wrapped around normal functions that are executed in component functions to prevent there execution.
-useMemo() should only be used if normal function has complex calculation that want to be prevent.
-useMemo() accept first parameter an anonymous function( that normal function to perform complex calculations) and second parameter dependancy array. and only re-execute when dependency changes.
+useMemo() is beneficial to prevent the execution of normal function
+in component unnecessary.
+memo() is wrapped around component functions but useMemo() is
+wrapped around normal functions that are executed in component
+functions to prevent there execution.
+useMemo() should only be used if normal function has complex
+calculation that want to be prevent.
+useMemo() accept first parameter an anonymous function( that normal
+ function to perform complex calculations) and second parameter
+ dependancy array. and only re-execute when dependency changes.
+
 N.B dont overuse useMemo() to perform extra check which costs performance
 ```
