@@ -123,9 +123,11 @@ function App() {
 ```
 Million Lint is a VSCode extension that speeds up your website!
 
-Your React app is slow. Million Lint surfaces problematic code and automatically suggests ways to improve it.
+Your React app is slow. Million Lint surfaces problematic code and
+automatically suggests ways to improve it.
 
-Million Lint works with any React app (Next.js, Vite, Webpack, etc.) – get started in minutes!
+Million Lint works with any React app (Next.js, Vite, Webpack, etc.)
+– get started in minutes!
 
 Automatic Installation
 ```
