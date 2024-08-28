@@ -29,7 +29,8 @@ Don't use it on components where props will change frequently
 ## useCallback Hook
 
 ```
-useCallback Hook is usefull to create cache for function in component to prevent re-rendering unnecessary
+useCallback Hook is usefull to create cache for function in
+component to prevent re-rendering unnecessary
 while parent component re-render
 otherwise if not use useCallback after re-rendering
 function will created new function in memory with new memory address
